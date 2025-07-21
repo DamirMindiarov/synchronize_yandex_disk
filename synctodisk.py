@@ -28,8 +28,7 @@ class SyncToDisk:
                 logger.info(f"Файл {filename} успешно загружен")
         except ConnectionError:
             if log:
-                logger.error(
-                    f"Файл {filename} не загружен. Ошибка соединения.")
+                logger.error(f"Файл {filename} не загружен. Ошибка соединения.")
             else:
                 raise ConnectionError
         except KeyError:
@@ -62,7 +61,6 @@ class SyncToDisk:
             else:
                 raise ConnectionError
 
-
     def get_info(self):
         """Получает информацию о файлах по указанному пути"""
         url = f"https://cloud-api.yandex.net/v1/disk/resources?path={self.dirpath}&limit=999999999999999999"
@@ -73,4 +71,3 @@ class SyncToDisk:
             logger.error("Ошибка соединения")
         except KeyError:
             logger.error(response.json()["message"])
-

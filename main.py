@@ -2,8 +2,13 @@ import time
 
 from loguru import logger
 
-from config import TOKEN_DISK, PATH_TO_SYNC_FOLDER, PATH_TO_FOLDER_IN_DISK, \
-    PERIOD_SYNC, PATH_TO_LOG_FILE
+from config import (
+    TOKEN_DISK,
+    PATH_TO_SYNC_FOLDER,
+    PATH_TO_FOLDER_IN_DISK,
+    PERIOD_SYNC,
+    PATH_TO_LOG_FILE,
+)
 from func import get_all_file_paths, detect_file_change, synchronize_with_disk
 from synctodisk import SyncToDisk
 
@@ -36,17 +41,12 @@ def main():
         time.sleep(PERIOD_SYNC)
 
 
-
-
-if __name__ == '__main__':
-    logger.info(f"Программа синхронизации файлов начинает работу с директорией {PATH_TO_SYNC_FOLDER}")
+if __name__ == "__main__":
+    logger.info(
+        f"Программа синхронизации файлов начинает работу с директорией {PATH_TO_SYNC_FOLDER}"
+    )
 
     try:
         main()
     except KeyboardInterrupt:
         logger.info("Программа синхронизации файлов завершила работу")
-
-
-
-
-
