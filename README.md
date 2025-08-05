@@ -10,9 +10,9 @@
 на Яндекс Диске при появлении, изменении или удалении файлов.
 
 ## Технологии
-loguru
-python-dotenv
-requests
+- loguru
+- python-dotenv
+- requests
 
 ## Запуск
 - установить зависимости командой ```pip install -r requirements.txt```
